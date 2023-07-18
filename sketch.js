@@ -22,6 +22,7 @@ function preload(){
     piscando = loadAnimation("piscar1.png","piscar2.png","piscar3.png");
     comendo = loadAnimation("comer1.png","comer2.png","comer3.png","comer4.png","comer5.png")
     comendo.looping = false;
+    triste.looping = false;
 }
 
 function setup() {
@@ -82,6 +83,9 @@ function draw() {
         fruta.show();
         if(detectarColisao(fruta.body, coelho)==true){
             coelho.changeAnimation("comendo")
+        }
+        if(detectarColisao(fruta.body, solo.body)==true){
+            coelho.changeAnimation("triste")
         }
     }
     
